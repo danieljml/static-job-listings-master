@@ -2,8 +2,9 @@ import dataJson from '../data.json' assert { type: 'json' };
 
 const container__jobs = document.querySelector('.container__jobs'),
   container__filter = document.querySelector('.container__filter'),
-  filterList = [],
   removeDuplications = array => [...new Set(array)];
+
+let filterList = [];
 
 const showData = (jobs = dataJson) => {
   const jobItems = jobs
@@ -79,18 +80,19 @@ container__jobs.addEventListener('click', e => {
   }
 });
 
-container__filter.addEventListener('click', e => {
-  if (e.target.classList[0] == 'filter__x') {
-    filterList.pop(e.target.previousElementSibling.textContent);
-    container__filter.innerHTML = generateFilters(filterList);
+container__filter.addEventListener('click', ({ target }) => {
+  if (target.classList[0] === 'filter__x') {
+    const removingFilter = filterList.filter(item => item !== target.previousElementSibling.textContent);
+    filterList = [...removingFilter];
 
-    if (filterList.length) {
-      const addingFilters = filterData(removeDuplications(filterList));
-      showData(addingFilters);
-      return;
+    container__filter.innerHTML = generateFilters(filterList);
+    const addingFilters = filterData(removeDuplications(filterList));
+    showData(addingFilters);
+
+    if (!removingFilter.length) {
+      container__filter.classList.remove('active');
+      showData();
     }
-    container__filter.classList.remove('active');
-    showData();
   }
 });
 
