@@ -1,0 +1,185 @@
+body {
+  margin: 0;
+  background-color: hsl(180, 52%, 96%);
+  display: flex;
+  flex-direction: column;
+}
+
+p {
+  margin: 0;
+}
+
+.container__jobs,
+.container__filter {
+  margin: 0 120px;
+}
+
+.header {
+  height: 90px;
+  margin-bottom: 40px;
+}
+
+.header__image {
+  height: 100%;
+  width: 100%;
+}
+
+.container__filter {
+  display: none;
+}
+
+.container__filter.active {
+  display: flex;
+  column-gap: 15px;
+  background-color: rgb(255, 255, 255);
+  padding: 0 25px;
+  margin-top: -65px;
+}
+
+.filter__item {
+  display: flex;
+  align-items: center;
+  height: 60px;
+  border-radius: 5px;
+}
+
+.filter__title {
+  background-color: hsl(180, 71%, 93%);
+  color: hsl(180, 29%, 50%);
+  padding: 5px;
+  font-size: 15px;
+  border-top-left-radius: 5px;
+}
+
+.filter__x {
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  background-color: rgb(41, 171, 138);
+  color: white;
+  padding: 5px;
+  font-size: 15px;
+  height: 17px;
+  width: 17px;
+}
+
+.job__item {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 20px;
+  background-color: rgb(255, 255, 255);
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px;
+  box-shadow: 0px 10px 10px #9dd9c5;
+  border-radius: 5px;
+  margin: 30px 0;
+}
+
+.job__info {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+}
+
+.job__image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.job__content {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+
+.job__details {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 10px;
+  color: hsl(180, 29%, 50%);
+  font-family: 'League Spartan', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.job__title {
+  color: hsl(180, 29%, 50%);
+  font-family: 'League Spartan', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  display: flex;
+  column-gap: 10px;
+  align-items: center;
+}
+
+.job__title > .title__new,
+.job__title > .title__featured {
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  font-size: 12px;
+  border-radius: 15px;
+  padding: 4px 7px;
+  margin: 0;
+  height: 10px;
+  padding-top: 7px;
+  font-weight: 600;
+}
+
+.job__title > .title__new {
+  background-color: hsl(180, 29%, 50%);
+  color: white;
+}
+
+.job__title > .title__featured {
+  background-color: black;
+  color: white;
+}
+
+.job__details > .btn {
+  background-color: hsl(180, 71%, 93%);
+  color: hsl(180, 29%, 50%);
+  font-weight: 700;
+  font-family: 'League Spartan', sans-serif;
+  padding: 6px 10px;
+  font-size: 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  transition: 0.5s all ease;
+}
+
+.job__details > .btn:hover {
+  color: hsl(180, 71%, 93%);
+  background-color: hsl(180, 29%, 50%);
+}
+
+.job__extra {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  color: hsl(180, 8%, 52%);
+  font-family: 'League Spartan', sans-serif;
+  font-weight: 500;
+}
+
+.job__position {
+  color: hsl(180, 14%, 20%);
+  font-family: 'League Spartan', sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+}
+
+@media screen and (max-width: 950px) {
+  .container__filter,
+  .container__jobs {
+    margin: 0 20px;
+  }
+
+  .job__item {
+    padding: 15px;
+  }
+}
