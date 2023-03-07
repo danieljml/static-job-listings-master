@@ -89,6 +89,7 @@ container__filter.addEventListener('click', e => {
       showData(addingFilters);
       return;
     }
+    container__filter.classList.remove('active');
     showData();
   }
 });
