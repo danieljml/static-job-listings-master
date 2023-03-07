@@ -10,7 +10,7 @@ const showData = (jobs = dataJson) => {
   const jobItems = jobs
     .map(el => {
       return `
-    <div class="job__item">
+    <div class="job__item ${el.new && el.featured ? 'border-left' : ''}">
       <div class="job__info">
         <div class="job__image">
           <img class="img" src="${el.logo}" alt="${el.company}" />
